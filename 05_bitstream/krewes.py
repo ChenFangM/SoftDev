@@ -11,6 +11,8 @@ DISCO:
     Str.split("<splitter>") splits a string and returns a list of substrings, not including the splitters
 QCC:
     Is there an easy way to split with multiple "<splitters>"?
+    What is the error:
+        Need type annotation for "krewes"?
 OPS Summary:
     1. Open krewes.txt and read it (convert to a str) (Utilize Str.strip() to remove newline)
     2. Split the string by "@@@", returning a list of "pd$$$devo$$$ducky"
@@ -18,14 +20,6 @@ OPS Summary:
     4. Append the sublist with just devo and ducky onto the krewes dictionary with the key of pd.
 """
 import random
-
-"""
-krewes = {
-           2:["NICHOLAS",  "ANTHONY",  "BRIAN",  "SAMUEL",  "JULIA",  "YUSHA",  "CORINA",  "CRAIG",  "FANG MIN",  "JEFF",  "KONSTANTIN",  "AARON",  "VIVIAN",  "AYMAN",  "TALIA",  "FAIZA",  "ZIYING",  "YUK KWAN",  "DANIEL",  "WEICHEN",  "MAYA",  "ELIZABETH",  "ANDREW",  "VANSH",  "JONATHAN",  "ABID",  "WILLIAM",  "HUI",  "ANSON",  "KEVIN",  "DANIEL",  "IVAN",  "JASMINE",  "JEFFREY"], 
-           7:["DIANA",  "DAVID",  "SAM",  "PRATTAY",  "ANNA",  "JING YI",  "ADEN",  "EMERSON",  "RUSSELL",  "JACOB",  "WILLIAM",  "NADA",  "SAMANTHA",  "IAN",  "MARC",  "ANJINI",  "JEREMY",  "LAUREN",  "KEVIN",  "RAVINDRA",  "SADI",  "EMILY",  "GITAE",  "MAY",  "MAHIR",  "VIVIAN",  "GABRIEL",  "BRIANNA",  "JUN HONG",  "JOSEPH",  "MATTHEW",  "JAMES",  "THOMAS",  "NICOLE",  "Karen"],
-           8:["ALEKSANDRA",  "NAKIB",  "AMEER",  "HENRY",  "DONALD",  "YAT LONG",  "SEBASTIAN",  "DAVID",  "YUKI",  "SHAFIUL",  "DANIEL",  "SELENA",  "JOSEPH",  "SHINJI",  "RYAN",  "APRIL",  "ERICA",  "JIAN HONG",  "VERIT",  "JOSHUA",  "WILSON",  "AAHAN",  "GORDON",  "JUSTIN",  "MAYA",  "FAIYAZ",  "SHREYA",  "ERIC",  "JEFFERY",  "BRIAN",  "KEVIN",  "SAMSON",  "BRIAN",  "HARRY",  "wanying"]
-         }
-"""
 
 krewes = {}
 
@@ -42,7 +36,6 @@ for x in splitCorr:
     
 
 period = random.choice(list(krewes.keys()))
-print(period)
 krewe = random.choice(krewes[period])
-print(krewe)
-print(krewes)
+print(f"Pd {period} : {krewe}") 
+print(f"krewes: {krewes}")
