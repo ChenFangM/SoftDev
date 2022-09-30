@@ -5,10 +5,17 @@ K05 -- Krewes
 2022-09-28
 time spent: (classtime) 1.5 hrs
 
-DISCO:
+DISCO: 
+    open(fileName.txt) does not return a String.
+    You can get the text of the file in String format by calling (open(fileName.txt)).read()
+    Str.split("<splitter>") splits a string and returns a list of substrings, not including the splitters
 QCC:
+    Is there an easy way to split with multiple "<splitters>"?
 OPS Summary:
-
+    1. Open krewes.txt and read it (convert to a str) (Utilize Str.strip() to remove newline)
+    2. Split the string by "@@@", returning a list of "pd$$$devo$$$ducky"
+    3. Run a for loop traversing the list, and splitting each string by "$$$" so that you get a new list with pd in index 0, devo in index 1, ducky in index 2
+    4. Append the sublist with just devo and ducky onto the krewes dictionary with the key of pd.
 """
 import random
 
