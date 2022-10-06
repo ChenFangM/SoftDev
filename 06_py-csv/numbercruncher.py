@@ -44,30 +44,28 @@ for job in listOfJobs:
     
     jobs[counter] = jobstr
 
+# Picking a job based on likelihood
 def trial():
     rando = (random.randint(1, 998) / 10.0) 
     for x in list(jobs.keys()):
         if x >= rando:
-            chosen = jobs[x]
-            break
-    
-    # Line for  Testing
-    jobTest[chosen] = jobTest[chosen] + 1
+            return jobs[x]
+# End of trial()
 
+# print(trial())
 
 ## Testing Stuff
 jobTest = {}
-numOfTests = 1000000
+numOfTests = 100000
 
 for jobName in jobs.values():
     jobTest[jobName] = 0
 
 for test in range(numOfTests):
-    trial()
+    chosen = trial()
+    jobTest[chosen] = jobTest[chosen] + 1
 
 for k in list(jobTest.keys()):
     jobTest[k] = round(float(jobTest[k]) * 100 / numOfTests, 1)
 
 print(jobTest)  
-
-## End of Testing
