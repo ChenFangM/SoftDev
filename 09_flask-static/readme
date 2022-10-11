@@ -9,3 +9,6 @@ Predictions:
 
 Breaking Disco:
 - http://localhost:5000/static/foo downloads the file foo onto local desktop
+
+QCC:
+- Is <!DOCTYPE html> necessary? If so, why?
