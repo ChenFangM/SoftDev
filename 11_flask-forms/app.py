@@ -1,6 +1,8 @@
-# Clyde 'Thluffy' Sinclair
+# New Deal: Fang, Anson, Ryan
 # SoftDev
-# Oct 2022
+# Oct-14-2022
+# K11 -- forms
+# time spent: 1 hrs
 
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
@@ -28,7 +30,7 @@ PROTIP: Insert your own in-line comments
    understand what is going on.
 '''
 
-@app.route("/") #, methods=['GET', 'POST'])
+@app.route("/", methods=['POST'])
 def disp_loginpage():
     print("\n\n\n")
     print("***DIAG: this Flask obj ***")
