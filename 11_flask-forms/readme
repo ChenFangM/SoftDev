@@ -19,3 +19,6 @@ runs authenticate() from app.py, which returns a string.
 Browser updates the page to the new route.
 
 Methods not allowed for requested URL when methods=['POST']
+
+QCC:
+Where do the inputs from the form submission go?
