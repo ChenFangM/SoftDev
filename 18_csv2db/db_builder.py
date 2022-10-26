@@ -15,42 +15,42 @@ c = db.cursor()               #facilitate db ops -- you will use cursor to trigg
 
 #==========================================================
 
-if c.execute("select name from sqlite_schema where type = 'table'").fetchall() == []:
+# if c.execute("select name from sqlite_schema where type = 'table'").fetchall() == []:
 
-	# CREATING COURSES
-	tbleName = "courses"
-	parameters = "code TEXT, mark INT, id INT"
+# CREATING COURSES
+tbleName = "courses"
+parameters = "code TEXT, mark INT, id INT"
 
-	command = (f"create table {tbleName} ({parameters})")
-	c.execute(command)
+command = (f"create table if not exists {tbleName} ({parameters})")
+c.execute(command)
 
-	with open("./courses.csv") as file:
-		reader = csv.DictReader(file)
-		for row in reader:
-			code = row['code']
-			mark = row['mark']
-			id = row['id']
-			command = (f"insert into {tbleName} values(\"{code}\", {mark}, {id})")
-			c.execute(command)
+with open("./courses.csv") as file:
+	reader = csv.DictReader(file)
+	for row in reader:
+		code = row['code']
+		mark = row['mark']
+		id = row['id']
+		command = (f"insert into {tbleName} values(\"{code}\", {mark}, {id})")
+		c.execute(command)
 
-	# CREATING STUDENTS
-	tbleName = "students"
-	parameters = "name TEXT, age INT, id INT"
+# CREATING STUDENTS
+tbleName = "students"
+parameters = "name TEXT, age INT, id INT"
 
-	command = (f"create table {tbleName} ({parameters})")
-	c.execute(command)
+command = (f"create table if not exists {tbleName} ({parameters})")
+c.execute(command)
 
-	with open("./students.csv") as file:
-		reader = csv.DictReader(file)
-		for row in reader:
-			name = row['name']
-			age = row['age']
-			id = row['id']
-			command = (f"insert into {tbleName} values(\"{name}\", {age}, {id})")
-			c.execute(command)
+with open("./students.csv") as file:
+	reader = csv.DictReader(file)
+	for row in reader:
+		name = row['name']
+		age = row['age']
+		id = row['id']
+		command = (f"insert into {tbleName} values(\"{name}\", {age}, {id})")
+		c.execute(command)
 
-# print(c.execute('select * from courses').fetchall())
-# print(c.execute('select * from students').fetchall())
+print(c.execute('select * from courses').fetchall())
+print(c.execute('select * from students').fetchall())
 
 #==========================================================
 
