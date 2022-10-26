@@ -15,24 +15,24 @@ c = db.cursor()               #facilitate db ops -- you will use cursor to trigg
 
 #==========================================================
 
-if c.execute(".table").fetchall() == []:
-
-	with open("./courses.csv",) as file:
-		courses = csv.DictReader(file)
+if c.execute("select name from sqlite_schema where type = 'table'").fetchall() == []:
 
 	tbleName = "courses"
-	parameters = "code text, mark int, id int"
+	parameters = "code TEXT, mark INT, id INT"
 
-	command = f("create table {tbleName} ({parameters})")
+	command = (f"create table {tbleName} ({parameters})")
 	c.execute(command)
 
-	for row in reader:
-		code = row['code']
-		mark = row['mark']
-		id = row['id']
-		cammand = f("insert into courses values({code}, {mark}, {id}")
-		c.execute(command)
+	with open("./courses.csv") as file:
+		reader = csv.DictReader(file)
+		for row in reader:
+			code = row['code']
+			mark = row['mark']
+			id = row['id']
+			command = (f"insert into courses values(\"{code}\", {mark}, {id})")
+			c.execute(command)
 
+print(c.execute('select * from courses').fetchall())
 
 #==========================================================
 
