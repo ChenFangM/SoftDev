@@ -15,16 +15,25 @@ c = db.cursor()               #facilitate db ops -- you will use cursor to trigg
 
 #==========================================================
 
+if c.execute(".table").fetchall() == []:
 
-# < < < INSERT YOUR TEAM'S POPULATE-THE-DB CODE HERE > > >
-with open("./courses.csv",) as file:
-    reader = csv.DictReader(file)
+	with open("./courses.csv",) as file:
+		courses = csv.DictReader(file)
 
-c.execute("select name from sqlite_master")
-tables = c.fetchall();
-if "courses" not in tables:
-    command = "create table courses(code text, mark int, id int)"   #test SQL stmt in sqlite3 shell, save as string
-    c.execute(command)    # run SQL statement
+	tbleName = "courses"
+	parameters = "code text, mark int, id int"
+
+	command = f("create table {tbleName} ({parameters})")
+	c.execute(command)
+
+	for row in reader:
+		code = row['code']
+		mark = row['mark']
+		id = row['id']
+		cammand = f("insert into courses values({code}, {mark}, {id}")
+		c.execute(command)
+
+
 #==========================================================
 
 db.commit() #save changes
