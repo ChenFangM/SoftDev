@@ -15,8 +15,6 @@ c = db.cursor()               #facilitate db ops -- you will use cursor to trigg
 
 #==========================================================
 
-# if c.execute("select name from sqlite_schema where type = 'table'").fetchall() == []:
-
 # CREATING COURSES
 tbleName = "courses"
 parameters = "code TEXT, mark INT, id INT"
@@ -42,6 +40,7 @@ c.execute(command)
 
 with open("./students.csv") as file:
 	reader = csv.DictReader(file)
+	print(reader.line_num)
 	for row in reader:
 		name = row['name']
 		age = row['age']
