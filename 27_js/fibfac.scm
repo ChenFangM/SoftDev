@@ -8,23 +8,6 @@
 ;factorial:
 ;<your team's fact(n) implementation>
 
-;fact(1) ;"...should be  1"
-;fact(2) ;"...should be  2"
-;fact(3) ;"...should be  6"
-;fact(4) ;"...should be  24"
-;fact(5) ;"...should be  120"
-
-
-;fib:
-;<your team's fib(n) implementation>
-
-;fib(0) ;"...should be  0"
-;fib(1) ;"...should be  1"
-;fib(2) ;"...should be  1"
-;fib(3) ;"...should be  2"
-;fib(4) ;"...should be  3"
-=================================================================
-
 (define (fact n)
   (if (> n 1) 
     (* n (fact(- n 1)))
@@ -34,6 +17,15 @@
 
 (fact 4)
 
+;(fact 1) ;"...should be  1"
+;(fact 2) ;"...should be  2"
+;(fact 3) ;"...should be  6"
+;(fact 4) ;"...should be  24"
+;(fact 5) ;"...should be  120"
+
+;fib:
+;<your team's fib(n) implementation>
+
 (define (fib n) 
   (if (= n 0)
       0
@@ -42,3 +34,11 @@
           (+ (fib (- n 1)) (fib (- n 2))))))
 
 (fib 20)
+
+
+;(fib 0) ;"...should be  0"
+;(fib 1) ;"...should be  1"
+;(fib 2) ;"...should be  1"
+;(fib 3) ;"...should be  2"
+;(fib 4) ;"...should be  3"
+;=================================================================

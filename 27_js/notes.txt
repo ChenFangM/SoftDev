@@ -6,16 +6,15 @@ K27 -- Basic functions in JavaScript
 DISCO
 -----------------------------------------------------------------
 * Ooooh, scheme needs an interpreter.
-* Aaah-haa!  ____
-* ...
+* JavaScript don't need no semicolons? But otherwise, similar
+  to Java.
+* Define functions with 'function'
 =================================================================
 
 QCC
 -----------------------------------------------------------------
-* Why...?
-* Huh?
-* Teh whah now?
-* ...
+* How to run Scheme without DrRacket?
+* How to run JavaScript without browser/html?
 =================================================================
 
 
