@@ -1,16 +1,22 @@
 Team Imperium Ascension :: FMC, RL
 SoftDev pd02
 K28 -- Building Castles in the Sand
-2023-04-05w
+2023-04-17m
 
 DISCO
 -----------------------------------------------------------------
-* Ooooh,
+* Ooooh, you can instantiate variables as functions.
+* There's a dominant color order (blue > green > red)... if a 
+class list has red and blue, it'll be blue.
+* Html script doesn't have access to js file if written above the source
 =================================================================
 
 QCC
 -----------------------------------------------------------------
-* 
+* What is "[[Prototype]]: Object," found in var o?
+* What's the difference between declaring a function with
+"function f(n) {};", "var f = function(n) {};", and 
+"const f = (n) => {};" 
 =================================================================
 
 

@@ -4,7 +4,7 @@
     Team Imperium Ascension :: FMC, RL
     SoftDev pd02
     K28 -- Building Castles in the Sand
-    2023-04-05w
+    2023-04-17m
    --------------------------------------------------
 -->
 
@@ -32,13 +32,42 @@
       <li class="green blue">item 1</li>
       <li class="green blue">item 2</li>
       <li class="red green blue">item 3</li>
-      <li class="red green blue">item 4</li>
+      <li class="red blue green">item 4</li>
       <li class="green blue">item 5</li>
       <li class="green blue">item 6</li>
       <li class="">item 7</li>
     </ol>
 
+    <div id="fib">
+      <h2>Fibonacci Sequence</h2>
+      <div id="fib0">fib(0) ==> </div>
+      <div id="fib5">fib(5) ==> </div>
+    </div>
+
+    <div id="fact">
+      <h2>Factorials</h2>
+      <div id="fact0">fact(0) ==> </div>
+      <div id="fact5">fact(5) ==> </div>
+    </div>
+
+    <div id="gcd">
+      <h2>Greatest Common Divisor</h2>
+      <div id="gcd0_1">gcd(0,1) ==> </div>
+      <div id="gcd10_15">gcd(10,15) ==> </div>
+    </div>
+
     <script src="dommy_consolery.js"></script>
+
+    <script>
+      addText("fib0", fib(0));
+      addText("fib5", fib(5));
+      
+      addText("fact0", fact(0));
+      addText("fact5", fact(5));
+
+      addText("gcd0_1", gcd(0,1));
+      addText("gcd10_15", gcd(10,15))
+    </script>
 
   </body>
 </html>
