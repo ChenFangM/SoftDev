@@ -41,7 +41,7 @@ var addItem = function(text) {
 // Adding Text
 var addText = function(id, text) {
   var list = document.getElementById(id);
-  var newitem = document.createElement("text"); // creates an element with the property li, so it continues numbering the list
+  var newitem = document.createElement("text");
   newitem.innerHTML = text; 
   list.appendChild(newitem); 
 };
