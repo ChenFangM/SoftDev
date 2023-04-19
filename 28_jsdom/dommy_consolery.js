@@ -7,7 +7,7 @@
 
 //send diagnostic output to console
 //(Ctrl-Shift-K in Firefox to reveal console)
-console.log("AYO"); // param the name of your console
+console.log("AYO");
 
 var i = "hello"; // i may be redefined to an object that's not a string
 var j = 20;
@@ -104,3 +104,43 @@ var gcd = function(m, n) {
   }
   return gcd(n, m % n);
 };
+
+
+
+// LE BUTTONS
+isJinged = false;
+isRyaned = false;
+isFanged = false;
+
+var jing = function() {
+  if (!(isJinged)) {
+    addText("fib0", fib(0));
+    addText("fib5", fib(5));
+    isJinged = true;
+  }
+};
+
+var but1 = document.getElementById("fibby");
+but1.addEventListener('click', jing);
+
+var ryan = function() {
+  if (!(isRyaned)) {
+    addText("fact0", fact(0));
+    addText("fact5", fact(5));
+    isRyaned = true;
+  }
+}
+
+var but2 = document.getElementById("facty");
+but2.addEventListener('click', ryan);
+
+var fang = function() {
+  if (!(isFanged)) {
+    addText("gcd0_1", gcd(0,1));
+    addText("gcd10_15", gcd(10,15));
+    isFanged = true;
+  }
+};
+
+var but3 = document.getElementById("gcdee");
+but3.addEventListener('click', fang);
