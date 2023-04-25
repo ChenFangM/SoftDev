@@ -12,9 +12,7 @@ ctx.fillStyle = "red"
 var mode = "rect";
 
 var toggleMode = (e) => {
-    var bToggler = document.getElementById("buttonToggle");
-
-    console.log(e);
+    console.log("toggling...");
     if (mode == "rect") {
         mode = "circle";
         bToggler.innerHTML = "Circle";
@@ -28,6 +26,7 @@ var toggleMode = (e) => {
 var drawCircle = function(e) {
     var mouseX = e.offsetX;
     var mouseY = e.offsetY;
+    console.log("mouseclick registered at ", mouseX, mouseY);
 
     ctx.beginPath();
     ctx.arc(mouseX, mouseY, 50, 0, 2 * Math.PI);
@@ -38,6 +37,7 @@ var drawCircle = function(e) {
 var drawRect = function(e) {
     var mouseX = e.offsetX;
     var mouseY = e.offsetY;
+    console.log("mouseclick registered at ", mouseX, mouseY);
 
     ctx.fillRect(mouseX, mouseY, 100, 200);
 }
@@ -51,7 +51,8 @@ var draw = (e) => {
 }
 
 var wipeCanvas = () => {
-    ctx.clearRect(0, 0, 600, 600)
+    console.log("wiping canvas...");
+    ctx.clearRect(0, 0, 600, 600);
 }
 
 c.addEventListener("click", draw);
