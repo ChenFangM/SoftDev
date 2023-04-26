@@ -16,7 +16,7 @@ var requestID; // init global var
 
 var clear = (e) => {
   // console.log("wiping canvas...");
-  // e.preventDefault(); // throws an error when the canvas is at the default state
+  e.preventDefault(); // throws an error when the canvas is at the default state
   ctx.clearRect(0, 0, c.width, c.height);
 };
 
@@ -42,7 +42,7 @@ var drawDot = () => {
       radius = radius - 1;
     }
   
-    clear();
+    ctx.clearRect(0, 0, c.width, c.height);
     ctx.beginPath();
     ctx.arc(c.width / 2, c.height / 2, radius, 0, 2 * Math.PI);
     ctx.fill();
@@ -51,7 +51,7 @@ var drawDot = () => {
     requestID = window.requestAnimationFrame(draw);
   }
 
-  requestID = window.requestAnimationFrame(draw);
+  draw();
 };
 
 
@@ -72,7 +72,7 @@ var dvdLogoSetup = () => {
   logo.src = "logo_dvd.jpg";
 
   var dvdLogo = () => {
-    clear();
+    ctx.clearRect(0, 0, c.width, c.height);
     ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
 
     if (rectX == 0 || rectX == 440) {
@@ -87,7 +87,7 @@ var dvdLogoSetup = () => {
     requestID = window.requestAnimationFrame(dvdLogo);
   } 
 
-  requestID = window.requestAnimationFrame(dvdLogo);
+  dvdLogo();
 }
 
 
